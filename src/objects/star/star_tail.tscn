@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7uvqhjam2j2n"]
+
+[ext_resource type="Texture2D" uid="uid://b5gcoesy61p3x" path="res://src/sprites/stars.png" id="1_wv7r7"]
+[ext_resource type="Script" path="res://src/scripts/star/star_tail.gd" id="2_hl15u"]
+
+[node name="StarShadow" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.392157)
+texture = ExtResource("1_wv7r7")
+centered = false
+hframes = 2
+script = ExtResource("2_hl15u")

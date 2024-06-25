@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://di85qsqatdxw4"]
 
 [ext_resource type="PackedScene" uid="uid://wiimethjqe7h" path="res://src/objects/player.tscn" id="1_d40h2"]
-[ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/star/stargen.tscn" id="2_jl3ax"]
+[ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/star/star_gen.tscn" id="2_jl3ax"]
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
@@ -11,3 +11,5 @@ scale = Vector2(2, 2)
 position = Vector2(64, 160)
 
 [node name="StarGen" parent="." instance=ExtResource("2_jl3ax")]
+spawns = 4
+frequency = 0.2

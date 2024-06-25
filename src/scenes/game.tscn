@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://di85qsqatdxw4"]
+[gd_scene load_steps=4 format=3 uid="uid://di85qsqatdxw4"]
 
 [ext_resource type="PackedScene" uid="uid://wiimethjqe7h" path="res://src/objects/player.tscn" id="1_d40h2"]
 [ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/star/star_gen.tscn" id="2_jl3ax"]
+[ext_resource type="PackedScene" uid="uid://ct4rkhc5hwe58" path="res://src/objects/enemie_gen.tscn" id="3_t7x1s"]
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
-scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_d40h2")]
-position = Vector2(64, 160)
+position = Vector2(128, 320)
+scale = Vector2(2.4, 2.4)
+
+[node name="EnemieGen" parent="." instance=ExtResource("3_t7x1s")]
 
 [node name="StarGen" parent="." instance=ExtResource("2_jl3ax")]
-spawns = 4
-frequency = 0.2

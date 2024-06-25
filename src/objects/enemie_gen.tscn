@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://ct4rkhc5hwe58"]
+
+[node name="EnemieGen" type="Node2D"]

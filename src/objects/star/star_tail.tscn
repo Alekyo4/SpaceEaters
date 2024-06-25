@@ -9,3 +9,9 @@ texture = ExtResource("1_wv7r7")
 centered = false
 hframes = 2
 script = ExtResource("2_hl15u")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_tail"]

@@ -1,4 +1,64 @@
-[gd_scene format=3 uid="uid://d357t5pget6c4"]
+[gd_scene load_steps=6 format=3 uid="uid://d357t5pget6c4"]
+
+[ext_resource type="Texture2D" uid="uid://dv3qjcqto6v6c" path="res://icon.png" id="1_jrtq7"]
+[ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/star/star_gen.tscn" id="1_y4u7n"]
+
+[sub_resource type="Animation" id="Animation_nviol"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(93, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(199, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_jflvg"]
+resource_name = "Start"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(93, -0.25, 0, 0.25, 0, 93, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(199, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7rjc"]
+_data = {
+"RESET": SubResource("Animation_nviol"),
+"Start": SubResource("Animation_jflvg")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,3 +70,22 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 199.0
+offset_right = 123.0
+offset_bottom = 222.0
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("1_jrtq7")
+stretch_mode = 2
+
+[node name="StarGen" parent="." instance=ExtResource("1_y4u7n")]
+spawns = 2
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "Start"
+libraries = {
+"": SubResource("AnimationLibrary_a7rjc")
+}

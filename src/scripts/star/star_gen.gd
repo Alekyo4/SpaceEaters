@@ -3,7 +3,7 @@ extends Node2D
 @export var spawns: int = 4
 @export var distancy: int = 64
 
-@export var frequency = 0.5
+@export var frequency = 0.2
 
 @onready var star_scene := preload("res://src/objects/star.tscn")
 

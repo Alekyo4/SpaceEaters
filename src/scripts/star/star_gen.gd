@@ -3,11 +3,13 @@ extends Node2D
 @export var spawns: int = 4
 @export var distancy: int = 64
 
-@export var frequency = 0.2
+@export var is_super: bool = false
 
-@onready var star_scene := preload("res://src/objects/star.tscn")
+@export var frequency: float = 0.2
 
-@onready var area_x := get_viewport_rect().size.x
+@onready var star_scene: PackedScene = preload("res://src/objects/star.tscn")
+
+@onready var area_x: float = get_viewport_rect().size.x
 
 @onready var timer := Timer.new()
 @onready var rng := RandomNumberGenerator.new()
@@ -18,7 +20,7 @@ func _ready() -> void:
 
 	timer.connect("timeout", _on_spawn)
 	
-	add_child(timer)
+	self.add_child(timer)
 
 func _on_spawn() -> void:
 	for _i in range(spawns):
@@ -30,5 +32,7 @@ func _on_spawn() -> void:
 		
 		star.position.x = pos_x
 		star.position.y = pos_y
+
+		star.is_super = is_super
 		
-		add_child(star)
+		self.add_child(star)

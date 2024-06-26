@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbptmphcrtgg4"]
 
-[ext_resource type="Script" path="res://src/scripts/gun/gun_sfat.gd" id="1_omg6s"]
+[ext_resource type="Script" path="res://src/scripts/player/gun/gun_sfat.gd" id="1_omg6s"]
 [ext_resource type="Texture2D" uid="uid://dxx3lguw7abda" path="res://src/sprites/player_gun.png" id="2_ulodh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ju31"]

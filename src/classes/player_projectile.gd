@@ -13,8 +13,9 @@ var frequency: float = 0
 
 func _ready() -> void:
 	spread = rng.randi_range(-spread, spread)
-	rotation_degrees = spread
+	
+	self.rotation_degrees = spread
 
 func _process(_delta) -> void:
-	if global_position.y <= -texture.get_rect().size.y:
+	if self.global_position.y <= -texture.get_rect().size.y:
 		queue_free()

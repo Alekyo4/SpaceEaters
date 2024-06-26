@@ -18,6 +18,8 @@ particles_anim_loop = true
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_0n5og")
+toggle_move = null
+toggle_shoot = null
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_etvcj")

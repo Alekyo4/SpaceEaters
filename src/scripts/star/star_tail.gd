@@ -5,18 +5,18 @@ extends Sprite2D
 var size: int
 var limit_size: int
 
-func _init():
+func _init() -> void:
 	limit_size = sizes.pick_random()
 
-func _ready():
+func _ready() -> void:
 	for _i in range(limit_size / 2):
 		increase()
 
-func increase():
-	position.y -= 1
-	scale.y += 0.5
+func increase() -> void:
+	self.position.y -= 1
+	self.scale.y += 0.5
 
-func _on_tail():
+func _on_tail() -> void:
 	if (size + 1) >= limit_size:
 		$Timer.stop()
 	

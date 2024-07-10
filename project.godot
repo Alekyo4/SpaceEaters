@@ -15,9 +15,9 @@ run/main_scene="res://src/scenes/menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0.0470588, 0.0470588, 0.0470588, 1)
-boot_splash/image="res://splash.png"
+boot_splash/show_image=false
 boot_splash/use_filter=false
-config/icon="res://icon.png"
+config/icon="res://src/sprites/icon.png"
 
 [debug]
 
@@ -30,8 +30,11 @@ window/size/viewport_height=448
 window/size/window_width_override=512
 window/size/window_height_override=896
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 window/handheld/orientation=1
 mouse_cursor/custom_image="res://src/sprites/cursor.png"
+window/bg_color=Color(0.0470588, 0.0470588, 0.0470588, 1)
+window/show_image=false
 
 [editor]
 

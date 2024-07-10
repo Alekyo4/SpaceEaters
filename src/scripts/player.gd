@@ -34,7 +34,7 @@ func _move() -> void:
 		for dx in ["x", "y"]:
 			var oy: int = 0 if dx == "x" else -2 # Origin Y in Touch
 			
-			self.global_position[dx] = clamp(lerp(self.global_position[dx] + oy, last_touch[dx], 0.05), limit[0][dx], limit[1][dx])
+			self.global_position[dx] = clamp(lerp(self.global_position[dx] + oy, last_touch[dx], 0.1), limit[0][dx], limit[1][dx])
 	
 		$Texture.frame = 2 if direction else 1
 		$Fire.position.x = 0.5

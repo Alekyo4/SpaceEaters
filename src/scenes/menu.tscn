@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://d357t5pget6c4"]
 
-[ext_resource type="Texture2D" uid="uid://dv3qjcqto6v6c" path="res://icon.png" id="1_jrtq7"]
 [ext_resource type="Script" path="res://src/scripts/menu.gd" id="1_ol83q"]
 [ext_resource type="Texture2D" uid="uid://bwoqo7tnpg0qt" path="res://src/sprites/title.png" id="1_w2cgc"]
 [ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/star/star_gen.tscn" id="1_y4u7n"]
+[ext_resource type="Texture2D" uid="uid://dv3qjcqto6v6c" path="res://src/sprites/icon.png" id="4_1jwla"]
 [ext_resource type="FontFile" uid="uid://duqva5yjewu46" path="res://src/fonts/upheavtt.ttf" id="4_2bkcn"]
 [ext_resource type="PackedScene" uid="uid://wiimethjqe7h" path="res://src/objects/player.tscn" id="4_cvxi1"]
 
@@ -643,10 +643,10 @@ tracks/3/path = NodePath("../Text:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_giaqm"]
@@ -693,7 +693,7 @@ offset_top = 18.0
 offset_right = 72.0
 offset_bottom = 41.0
 scale = Vector2(2.3, 2.3)
-texture = ExtResource("1_jrtq7")
+texture = ExtResource("4_1jwla")
 stretch_mode = 2
 
 [node name="Animation" type="AnimationPlayer" parent="Title"]

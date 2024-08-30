@@ -25,6 +25,8 @@ enum StatusFire {
 
 func _ready() -> void:
 	limit = [$Collision.shape.size, get_viewport_rect().size - $Collision.shape.size]
+	
+	limit[0].y += 50 # UI Texture
 
 func _physics_process(_delta: float) -> void:
 	_move()
@@ -32,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 func _move() -> void:
 	if is_move:
 		for dx in ["x", "y"]:
-			var oy: int = 0 if dx == "x" else -2 # Origin Y in Touch
+			var oy: int = 0 if dx == "x" else -4 # Origin Y in Touch
 			
 			self.global_position[dx] = clamp(lerp(self.global_position[dx] + oy, last_touch[dx], 0.1), limit[0][dx], limit[1][dx])
 	

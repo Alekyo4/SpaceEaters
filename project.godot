@@ -67,6 +67,12 @@ texture={
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_render/layer_1="back"
+2d_render/layer_2="game"
+2d_render/layer_3="ui"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

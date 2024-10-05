@@ -9,6 +9,8 @@ var origin := Vector2.ZERO
 var speed: int = 0
 var spread: int = 0
 
+var damage: int = 0
+
 var frequency: float = 0
 
 func _ready() -> void:

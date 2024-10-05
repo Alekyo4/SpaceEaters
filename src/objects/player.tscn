@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://wiimethjqe7h"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_0n5og"]
-[ext_resource type="Texture2D" uid="uid://coh7r20ilyh8w" path="res://src/sprites/player.png" id="1_etvcj"]
-[ext_resource type="Texture2D" uid="uid://dun2k221xy56m" path="res://src/sprites/player_fire.png" id="3_sik3m"]
-[ext_resource type="Script" path="res://src/scripts/player/player_gun.gd" id="3_vqrsd"]
-[ext_resource type="Script" path="res://src/scripts/player/player_fire.gd" id="5_dt3xl"]
+[ext_resource type="Texture2D" uid="uid://coh7r20ilyh8w" path="res://src/sprites/player/ship.png" id="1_etvcj"]
+[ext_resource type="Texture2D" uid="uid://dun2k221xy56m" path="res://src/sprites/player/fire.png" id="3_sik3m"]
+[ext_resource type="Script" path="res://src/scripts/player/gun.gd" id="3_vqrsd"]
+[ext_resource type="Script" path="res://src/scripts/player/fire.gd" id="5_dt3xl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am7ym"]
 size = Vector2(8, 7)
@@ -16,7 +16,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = true
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(1.4, 1.4)
+scale = Vector2(2.8, 2.8)
 script = ExtResource("1_0n5og")
 
 [node name="Texture" type="Sprite2D" parent="."]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct4rkhc5hwe58"]
+
+[ext_resource type="Script" path="res://src/scripts/generators/enemie_gen.gd" id="1_v264r"]
+
+[node name="EnemieGen" type="Node2D"]
+script = ExtResource("1_v264r")

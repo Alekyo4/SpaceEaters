@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://di85qsqatdxw4"]
 
-[ext_resource type="Texture2D" uid="uid://bu3rn5bp0wtmk" path="res://src/sprites/game_ui.png" id="1_6rwod"]
+[ext_resource type="Texture2D" uid="uid://bu3rn5bp0wtmk" path="res://src/sprites/ui/bar.png" id="1_3b36n"]
 [ext_resource type="PackedScene" uid="uid://wiimethjqe7h" path="res://src/objects/player.tscn" id="1_d40h2"]
-[ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/star/star_gen.tscn" id="2_jl3ax"]
-[ext_resource type="PackedScene" uid="uid://ct4rkhc5hwe58" path="res://src/objects/enemie_gen.tscn" id="3_t7x1s"]
+[ext_resource type="PackedScene" uid="uid://pp78j4dv6drl" path="res://src/objects/generators/star.tscn" id="2_jl3ax"]
+[ext_resource type="PackedScene" uid="uid://ct4rkhc5hwe58" path="res://src/objects/generators/enemie.tscn" id="3_t7x1s"]
 
 [sub_resource type="Animation" id="Animation_4fyn3"]
 length = 0.001
@@ -46,7 +46,6 @@ _data = {
 texture_filter = 1
 
 [node name="UI" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
 z_index = 3
 layout_mode = 3
 anchors_preset = 0
@@ -57,19 +56,22 @@ offset_bottom = 448.0
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 50.0
-texture = ExtResource("1_6rwod")
+texture = ExtResource("1_3b36n")
 
 [node name="Animation" type="AnimationPlayer" parent="UI"]
 autoplay = "start"
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_kn0md")
 }
 
-[node name="Player" parent="." instance=ExtResource("1_d40h2")]
-position = Vector2(128, 320)
-scale = Vector2(2.4, 2.4)
-status_fire = 2
+[node name="StarGen" parent="." instance=ExtResource("2_jl3ax")]
+z_index = 0
 
 [node name="EnemieGen" parent="." instance=ExtResource("3_t7x1s")]
+z_index = 1
 
-[node name="StarGen" parent="." instance=ExtResource("2_jl3ax")]
+[node name="Player" parent="." instance=ExtResource("1_d40h2")]
+z_index = 1
+position = Vector2(128, 320)
+status_fire = 2

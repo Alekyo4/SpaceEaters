@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://xsbqj2j2ufas"]
+
+[ext_resource type="Script" path="res://src/scripts/enemies/green/one.gd" id="1_fcxrt"]
+[ext_resource type="Texture2D" uid="uid://dlduhbnjoqs3f" path="res://src/sprites/enemie/green.png" id="2_pjoi1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhvmx"]
+atlas = ExtResource("2_pjoi1")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwrk7"]
+atlas = ExtResource("2_pjoi1")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pd8qg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhvmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwrk7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o0mk"]
+size = Vector2(8.33333, 8.33333)
+
+[node name="GreenOne" type="Node2D" groups=["enemies"]]
+scale = Vector2(2.4, 2.4)
+script = ExtResource("1_fcxrt")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pd8qg")
+animation = &"idle"
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+position = Vector2(1.98682e-07, 1.98682e-07)
+shape = SubResource("RectangleShape2D_2o0mk")

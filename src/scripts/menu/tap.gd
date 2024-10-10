@@ -1,6 +1,8 @@
 extends Node2D
 
-var taps: int = 0
+var qtaps: int = 0
+
+var allowed: bool = false
 
 func _ready() -> void:
 	pass
@@ -10,10 +12,13 @@ func _input(event: InputEvent) -> void:
 		if $Timer.time_left == 0:
 			$Timer.start()
 
-		self.taps += 1
+		self.qtaps += 1
 
 func _on_timeout():
-	if self.taps >= 2:
+	if self.qtaps >= 2 and allowed:
 		self.owner.get_node("Animation").play("game")
 	
-	self.taps = 0
+	self.qtaps = 0
+
+func _on_animation_player_finished(anim_name):
+	pass # Replace with function body.

@@ -1,5 +1,9 @@
 extends Control
 
+var qtap: int = 0
+
+var allow_start: bool = false
+
 var game_scene: PackedScene = preload("res://src/scenes/game.tscn")
 
 func _ready() -> void:
@@ -22,5 +26,7 @@ func _on_animation_finished(anim_name: String) -> void:
 func _on_animation_player_finished(anim_name: String):
 	if anim_name != "start":
 		return
+	
+	self.allow_start = true
 	
 	$Tap/Text/Animation.play("loop")
